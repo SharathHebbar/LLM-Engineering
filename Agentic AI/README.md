@@ -9,7 +9,7 @@ The framework of Agentic AI
     - [LLM](https://python.langchain.com/docs/integrations/providers/)
 2. Memory: The memory consists of the conversations or the data which can be used as a context for upcoming questions/conversations.
 - For more information
-    - [Memory](https://langchain-ai.github.io/langgraph/concepts/memory/)
+    - [Memory](Https://langchain-ai.github.io/langgraph/concepts/memory/)
 3. Knowledge: Knowledge or Knowledge Base is a data which is used to generate a response. The KB can be anything from a API, CSV File, PDF to a database.
 - For more information
     - [Retrivers](https://python.langchain.com/docs/integrations/retrievers/)
