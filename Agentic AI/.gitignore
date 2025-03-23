@@ -1,0 +1,6 @@
+*.drawio
+agents/
+.env
+DuckDuckGo_WebSearch/
+*.env
+main.ipynb
