@@ -308,8 +308,155 @@ Advantages: High Accuracy and fast searches especially in high-dimensional space
 6. Hybrid Retrieval: Combines keyword and vector-based searches for balanced retrieval effectiveness.
 7. Hierarchical Retrieval: Structures ther retrieval process in layers for improved efficiency and specificity.
 
-## Tect Splitting and Chunking Strategies
+## Text Splitting and Chunking Strategies
 
 - Importance of Effective Text Splitting
 
-1. Context Preservation
+1. Context Preservation: Proper splitting preserves the integrity of ideas, ensuring retrieved chunks remain coherent and meaningful.
+2. Impact on Retrieval Accuracy: Effective text splitting ensures key details are retrieved without losing important context. Poor splitting can result in incomplete or irrelevant results.
+
+- Balancing Chunk Size with Semantic Coherence
+
+1. Chunk Size: Smaller Chunks boost retrieval speed but risk losing context; larger chunks maintain coherence but may include irrelevant info.
+2. Semantic Coherence: Balance chunk size to keep meaning intact while ensuring relevance, enhancing retrieval and response quality.
+
+## Different Splitting Techniques
+
+
+| Techniques | Token-Based Splitting | Semantic Splitting | Paragraph Splitting | Sentence Splitting
+| :---: | :---: | :---: | :---: | :---: 
+| How | Splits text by token count, suitable for fitting within model limits. | Divides text by meaning using embeddings. | Splits at paragraph boundaries to keep related ideas intact. | Divides text by sentence markers. 
+| Use Case | Long texts for LLMs. | Tasks needing deep context understanding. | Document retrieval or topic modeling. | Summarization or Translation.
+| Advantage | Precise control over chunk size. | Produces meaningful, contextually relevant chunks. | Retains thematic coherence | Ensures logical flow and coherent analysis.
+ 
+## Query Transformation and Expansion
+
+| Techniques | Description | Advantage
+| :---: | :---: | :---: 
+| Synonym Expansion | Expands queries with synonyms or related words using tools like WordNet or Embeddings. | Increases chances of retrieving relevant results by capturing phrasing variations.
+| Concept Expansion | Adds related terms or entities to broaden the query scope. | Enhances comprehensiveness by retrieving documents on related concepts.
+| Query Reformulation | Rephrases queries for better alignment with target content. | Improves precision by matching query language with document phrasing.
+
+## Hypothesis Generation: Hypothetical Document Embeddings - HyDE Technique
+
+- Description: Generates synthetic document embeddings to explore potential retrieval scenarios for hypothetical or unseen documents.
+- Purpose: Improves retrieval by considering conceptually relevant documents that aren't present in the database.
+
+### Implementing HyDE with LangChain
+
+- LangChain Overview
+    - A framework for building applications that integrate language models for various tasks.
+
+- Implementation Steps
+    1. Define Scenarios: Identify where hypothetical embeddings are needed.
+    2. Generate Embeddings: Use LangChain to create these embeddings based on context.
+    3. Integrate: Incorporate embeddings into the retrieval system for better search results.
+    - Advantages: HyDE with Langchain expands retrieval by exploring more possibilities.
+
+## Re-ranking and Filtering Retrieved Documents
+
+1. Reranking
+
+    - Reordering search results based on additional criteria to improve relevance.
+    - Contextual Reranking: Adjusts based on user context or query history.
+    - Model Based Reranking: Uses ML Models to predict and reorder results by relevance.
+    - Feedback Based Reranking: Adapts rankings using user feedback.
+
+2. Filtering
+
+    - Refining results by excluding irrelevant or low-quality documents.
+    - Content-based Filtering: Filters by content relevance.
+    - Metadata Filtering: Uses Attributes like date or author.
+    - User Preference Filtering: Tailors results to individual preferences.
+
+## Using Cross Encoders for Reranking
+
+|  | Cross-Encoders | Bi-Encoders 
+| :---: | :---: | :---: 
+| How | Jointly encode query and document to assess relevance. | Encode query and document separately, comparing them with a similarity metric.
+| Advantage 1 | Higher Accuracy by capturing interactions. | More efficient with precomputed embeddings.
+| Advantage 2 | Better contextual understanding of relevance. | Scalable for large retrieval systems.
+
+## Popular Models
+
+|  | Sentence Transformers | Mono T5
+| :---: | :---: | :---: 
+| Description | Uses Bi-encoders for generating high-quality sentence embeddings, imporving similarity tasks. | Employs cross-encoder for text generation and relevance assessment.
+| Use Cases | Fast semantic similarity and embedding tasks. | Detailed text pair ranking and fine-grained reranking.
+
+
+## LLM Based Document Filtering
+
+- Using LLMs for Document Relevance
+    - Description: LLMs assess document relevance by understanding content in relation to the query, capturing nuanced meanings and context.
+    - Use Case: Effective for precise relevance needs, such as legal or research document analysis.
+
+- Implementing a relevance scoring system
+    - Input Processing: Feed query and document pairs to the LLM.
+    - Relevance Assessment: LLM assigns scores based on query-document match.
+    - Threshold Filtering: Retain documents meeting the relevance threshold.
+    - Continuous Learning: Refine scoring with user feedback and new data.
+
+# Advanced RAG Architectures
+
+## Overview
+
+- Advanced RAG architectures enhance traditional RAG systems with sophisticated components and methods. They aim to boost accuracy, efficiency, and scalability, making them ideal for complex tasks and large-scale applications.
+
+## Multi-Step Retrieval
+
+- Coarse to Fine Retrieval Strategies
+
+- Description: A hierarchical approach where an initial broad search (coarse) is followed by refined searches (fine) to handle large datasets efficiently.
+
+- Steps
+1. Coarse Retrieval: Quickly retrieves a broad set of documents using methods like keyword matching or ANN search.
+2. Fine Retrieval: Refines this set using advanced techniques like vector search or cross-encoders for improved precision.
+
+- Advantages:
+1. Scalability: Efficiently manages large data volumnes by filtering out less relevant documents early.
+2. Accuracy: Enhances relevance with detailed analysis in later stages.
+
+
+### Implementing Multi-Step Retrieval with LangChain
+
+- LangChain Overview
+    - A framework for chaining language tasks, suited for multi-step retrieval.
+
+- Implementation Steps
+    1. Coarse Retrieval: Set up basic search; retrieve broad document set.
+    2. Fine Retrieval: Refine with advanced models; integrate coarse and fine steps.
+    3. Final Output: Optimize and deliver refined.
+
+- Advantages
+    1. Modularity: Easy to adjust steps.
+    2. Efficiency: Balances speed and accuracy.
+    3. Customization: Flexible integration of models/tools.
+
+
+# Hybrid Search
+
+- Overview: Hybrid Search combines dense and sparse retrieval methods to leverage the strengths of both approaches, enhancing the accuracy and relevance of search results.
+
+## Combining Dense and Sparse Retrieval: 
+
+- Sparse Retrieval (Ex. BM25)
+    - Description: Uses term-frequency methods for exact keyword matches.
+    - Strength: High precision with exact terms.
+
+- Dense Retrieval (Ex. Embeddings)
+    - Description: Uses Vector-based methods for semantic similarity.
+    - Strength: Finds similar content based on meaning.
+
+- BM 25 + Embedding Hybrid Approach
+    - Approach
+        1. Initial Retrieval: Use BM25 for broad keyword-based search.
+        2. Dense Filtering: Refine with embeddings for semantic relevance.
+        3. Final Ranking: Combine BM25 and embedding scores for a ranked list.
+
+
+# Metrics for Evaluating RAG Performance.
+
+1. Precision
+    - Definition: Precision measures the proportion of relevant documents retrieved out of all the retrieved documents.
+    - Formula: $$ Precision = True Positives \over (True Positives + False Positives)
