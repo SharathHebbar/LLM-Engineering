@@ -623,3 +623,72 @@ Advantages: High Accuracy and fast searches especially in high-dimensional space
 2. Load Balancing: Distribute requests across servers using techniques like Round-Robin or IP Hash. Tools: Nginx, HAProxy.
 3. CDNs: Serve static data closer to userrs to cut latency and reduce server traffic.
 4. Reverse Proxies: Manage requests, caching, load balancing, SSL termination, and security.
+
+## Asynchronous Processnig For Improved Throughput
+
+1. Message Queue: Use RabbitMQ or Kafka for asynchronous request handling to improve scalabilitu and reliability.
+2. Caching: Cache frequent data and query results with Redis or Memcached to reduce backend load.
+3. Event-Driven Architecture: Use events for asynchronous processing.
+4. Rate Limiting: Limit the number of requests per user or service to prevent overload and ensure fair use.
+
+## Scaling Retrieval with Distributed Vector Databases.
+
+1. Vector Databases: Use distributed databases like Pinecone, Milvus, or Weavite for fast similarity searches and handling large-scale vectors.
+2. Sharding: Distribute data across multiple shards or nodes to enhance retrieval speed and enable horizontal scaling.
+3. Replication: Copy data across multiple nodes for high availability and fault tolerance.
+
+## Parallel Processing of Queries and Document Chunks
+
+1. Query Parallelism: Distribute queries across nodes to reduce latency and speed up responses.
+2. Document Chunking: Split documents into chunks for parallel processing and efficient retrieval.
+3. Load Balancing: Evenly distribute tasks to avoid bottlenecks and optimize resource use.
+
+## How to update LLMs and Embedding Models
+
+| | Approach | Process
+| :---: | :---: | :---:
+| Fine Tuning | Continue training with recent data. | Apply futher training on smaller, new dataset to refine performance.
+| Retraining | Train from scratch or with new data. | Retrain the model on the updated dataset to learn new patterns.
+| Model Replacement | Swap out the old model for a newer version. | Deploy the updated model while ensuring compatibility and improved results.
+| Incremental Updates | Gradually integrate new data. | Apply small updates to gradually adjust the model's knowledge.
+
+## A/B Testing New Model Versions
+
+1. Define Objectives 
+    - Purpose: Identify key evaluation aspects like accuracy or response time.
+    - Metrics: Choose relevant measures such as precision, recall, or user satisfaction.
+
+2. Design Experiment
+    - Groups: Split data / users into groups for A/B testing (current vs new model).
+    - Controls: Ensure both groups face similar conditions for valid comparisons.
+
+3. Deploy Models
+    - Implementation: Deploy both the models in a controlled environment using feature toggles or traffic routing.
+
+4. Make Decisions
+    - Evaluation: Decide whether to fully deploy, continue testing, or improve the new model.
+    - Iteration: Refine the model based on feedback and results.
+
+5. Analyze Results
+    - Comparison: Evaluate and compare performance metrics.
+    - Statistical Testing: Determine significance or performance differences.
+
+6. Collect Data
+    - Monitoring: Track interactions, performance, and user feedback for both models.
+
+
+# Real World RAG Implementation
+
+## Steps
+
+1. Data Integration: Unified data sources with APIs and standardization.
+2. RAG Model Setup: Fine-tune LLM and build a retrieval system with vector databases.
+3. Search Interface: Develop an intuitive search interface linked to the RAG Model.
+4. Testing and Optimization: Gathering feedback fine-tune for accuracy.
+5. Deployment and Training: Deploy the system and train employees
+
+## Outcomes
+
+1. Improved Efficiency: Search time reduced by 60%, significantly boosting employee productivity and task completion.
+2. Enhanced Accuracy: RAG delivers more accurate, consistent information, minimizing errors and improving data reliability.
+3. Better Decision-Making: Faster access to reliable data improved decision-making overall business performance metrics.
