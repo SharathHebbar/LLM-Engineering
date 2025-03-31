@@ -454,9 +454,172 @@ Advantages: High Accuracy and fast searches especially in high-dimensional space
         2. Dense Filtering: Refine with embeddings for semantic relevance.
         3. Final Ranking: Combine BM25 and embedding scores for a ranked list.
 
-
 # Metrics for Evaluating RAG Performance.
 
-1. Precision
+1. **Precision**
     - Definition: Precision measures the proportion of relevant documents retrieved out of all the retrieved documents.
     - Formula: &nbsp; &nbsp; &nbsp; &nbsp; ![Precision Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BPrecision%7D%20%3D%20%5Cfrac%7B%5Ctext%7BTrue%20Positives%7D%7D%7B%5Ctext%7BTrue%20Positives%7D%20+%20%5Ctext%7BFalse%20Positives%7D%7D)
+
+2. **Recall**
+    - Definition: Recall measures the proportion of relevant documents that were retrieved out of all the relevant documents available.
+    - Formula: &nbsp; &nbsp; &nbsp; &nbsp; ![Recall Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BRecall%7D%20%3D%20%5Cfrac%7B%5Ctext%7BTrue%20Positives%7D%7D%7B%5Ctext%7BTrue%20Positives%7D%20+%20%5Ctext%7BFalse%20Negatives%7D%7D)
+
+3. **F1-Score**
+    - Definition: The F1-Score is the harmonic mean of Precision an .
+    - Formula: &nbsp; &nbsp; &nbsp; &nbsp; ![F1 Score Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BF1%20Score%7D%20%3D%202%20%5Ctimes%20%5Cfrac%7B%5Ctext%7BPrecision%7D%20%5Ctimes%20%5Ctext%7BRecall%7D%7D%7B%5Ctext%7BPrecision%7D%20+%20%5Ctext%7BRecall%7D%7D)
+
+4. **Mean Reciprocal Rank (MRR)**
+    - Definition: MRR is a metric for evaluating systems that return ranked lists of results. It measures the average of the reciprocal ranks of the first relevant result.
+    - Formula: &nbsp; &nbsp; &nbsp; &nbsp; ![MRR Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BMRR%7D%20%3D%20%5Cfrac%7B1%7D%7BN%7D%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%20%5Cfrac%7B1%7D%7B%5Ctext%7BRank%20of%20first%20relevant%20result%7D%7D)
+
+5. **BLEU (Bilingual Evaluation Understudy)**
+    - Definition: BLEU measures how many n-grams (typically 1 to 4 words) in the generated text match those in the reference text.
+    - Formula: BLEU is calculated based on precision over different n-gram sizes, combined with a brevity penalty to penalize shorter translations.
+    &nbsp; &nbsp; &nbsp; &nbsp; ![BLEU Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BBLEU%7D%20%3D%20BP%20%5Ctimes%20%5Cexp%5Cleft%28%5Csum_%7Bn%3D1%7D%5E%7BN%7D%20w_n%20%5Clog%20p_n%5Cright%29)
+    - Use Case: Commonly used in Machine Translation, it helps evaluate how similar the generated content is to the reference in terms of matching exact words or phrases. However, it can sometimes miss out on meaning since it focuses on exact matches.
+
+6. **ROUGE (Recall-Oriented Understudy for Gisting Evaluation)**
+    - Definition: ROUGE measures the overlap between the generated text and the reference text, with a focus on recall (capturing all relevant information). The most common versions are:
+        1. ROUGE-N: Overlap of n-grams
+        2. ROUGE-L: Longest Common Subsequence (LCS) between the generated and reference texts.
+    - Formula: ROUGE measures Precision, Recall, and F1 for n-gram overlaps and LCS
+    - Use Case: Typically used in summarization tasks, ROUGE gives an indication of how well the generated content captures the important aspects of the reference text.
+
+7. **METEOR (Metric for Evaluation of Translation with Explicit Ordering)**
+    - Definition: METEOR is designed to improve on BLEU by considering synonyms, stemming, and paraphrasing, along with exact matches. It calculates both precision and recall.
+    - Formula: METEOR considers not just n-grams but also word order and synonym matches, providing a score based on precision and recall while rewarding matches for paraphrasing.
+    - Use Case: This metric is useful when you're interested in capturing meaning rather than just exact matches. It is often applied in machine translation and summarization tasks.
+
+8. **BERTScore**
+    - Definition: BERTScore uses contextual embeddings from BERT to compare the semantic similarity between the generated and reference texts, rather than focusing on exact word matches.
+    - How it works: It computes the cosine similarity between embeddings of the words in the generated and reference texts to measure how close they are in meaning.
+    - Use Case: Useful for capturing the underlying meaning and context in tasks like abstractive summarization and dialogues generation. BERTScore addresses the limitations of metrics like BLEU and ROUGE by focusing on semantic similarity.
+
+
+## RAG Specific Metrics
+
+|  | Definition | Use Cases
+| :---: | :---: | :---: 
+| Faithfulness | Faithfulness measures how accurately the generated content reflects the information from the retrieved documents, ensuring that the generated text does not introduce unsupported claims or hallucinations. | RAG Systems often combine generated and retrieved information, so reducing hallucinations is crucial for maintaining trust. High faithfulness ensures that the output is grounded in facts from the retrieved documents.
+| Relevance | Relevance assesses the quality of the retrieved documents and how well they contribute to answering the user's query. It measures how closely the documents match the query and how helpful they are for generating the final output. | Ensuring the retrieved documents are relevant is critical for optimizing the generation step as it directly impacts the quality and accuracy of the generated responses.
+
+# RAGAS - Retriever Augmented Generation Evaluation System
+
+- Overview: The RAGAS framework is designed to assess the performance and quality of RAG models. RAG models, which combine document retrieval with generative AI, are increasingly used in applications that require the synthesis of information from vast data sources.
+
+## Purpose and key features
+
+- Evaluates RAG pipleines for relevance, fluency, and fact-consistency.
+
+- Key Features:
+
+    - Scoring system to assess retrieval and generation.
+    - Optimizes retrieval quality and generative accuracy.
+
+## Integration with LangChain
+
+- Active Search: LangChain supports dynamic updates to retrieval strategies based on real-time data.
+- Seamless Integration: LangChain enables chaining retrieval and generation tasks for RAGAS implementation.
+- Enhanced Retrieval: Combines traditional and advanced retrieval methods, supporting hybrid approaches in RAGAS.
+- Adaptive Generation: Links retrieval results with language models, ensuring contextually relevant high-quality output.
+
+## RAGAS Evaluation Metrics
+
+- Answer Relevancy: Measure how relevant the generated answer is to the query.
+- Context Relevancy: Assess if the retrieved context aligns with the query.
+- Faithfulness: Ensure the generated content accurately reflects the retrieved information.
+- Context Recall: Evaluate the system's ability to retrieve the most pertinent information from the source.
+
+## Creating AI Augmented test sets
+
+### Techniques for generating diverse test questions
+
+1. Prompt Engineering: Craft prompts to generate various question types (Ex. Multiple choice, short answer, essays) by specifying topics and difficulty.
+2. Data Augmentation: Create question vairations using paraphrasing, reformulation, or synonym replacement.
+3. Cross Domain Generation: Use Models trained on different domains to generate questions across various subjects.
+
+### Ensuring coverage of different question types and difficulties
+
+|  | Coverage | Strategy
+| :---: | :---: | :---: 
+| Question Type Variation | Include multiple-choice, true/false, short answer, and essay questions. | Design prompts to request specific types and ensure their presence in the test set.
+| Difficulty Level Distribution | Generate questions from basic to advanced for balance. | Adjust model parameters or fine-tune to vary question difficulty.
+| Expert Review | Subject Matter Experts validate questions for accuracy and relevance. | Experts Review a sample to ensure quality across types and difficulty levels.
+
+# Optimizing RAG Pipelines
+
+## Fine Tuning strategies for embeddings
+
+|  | How | Approach | Benefits
+| :---: | :---: | :---: | :---: 
+| Domain Adaption | Adjust embeddings to capture industry specific terminology. | Fine tune embeddings on domain-specific corpora(Ex. Legal or Medical Texts). | Improves relevance and accuracy for domain-specific content.
+| Transfer Learning | Adapt general embeddings to a specific domain using additional training. | Fine-tune pre-trained models like BERT or GPT with domain-specific data. | Leverages general knowledge while refining domain-specific understanding.
+
+## Contrastive Learning Approaches
+
+|  | How | Approach | Benefits
+| :---: | :---: | :---: | :---: 
+| Contrastive Learning | Learn embeddings by contrasting similar and dissimilar data pairs. | Use methods like SimCLR or MoCo with positive (similar) and negative (dissimilar) pairs. | Enhances embedding quality for better retrieval and classification.
+| Triplet Loss | Learn to distinguish between an anchor, a positive (same class) and a negative (different class) example. | Train with a loss function that pulls the positive closer to the anchor than the negative. | Refines embeddings to cluster similar items and separate dissimilar ones.
+
+## LLM optimization for RAG
+
+- Prompt Engineering: Craft prompts to optimize how LLM utilize retrieved context for more accurate responses.
+
+| Techniques | Description
+| :---: | :---:
+| Contextual Prompts | Design prompts that clearly instruct the model to use the provided context or retrieved documents effectively. For example, explicitly ask the model to summarize the retrieved information or integrate specific details.
+| Instruction Tuning | Refine prompts to guide the model in generating responses that are better aligned with the context, such as specifying the type of information to focus on or the format of the output.
+| Example Prompting | Provide examples within the prompt of how to use the retrieved context to generate responses, helping the model understand the desired output format.
+
+- Few-Shot Learning: Use a few relevant examples to guide LLMs in improving performance within RAG systems, enhancing response quality.
+
+| Techniques | Description
+| :---: | :---:
+| Few-Shot Examples | Provide the model with a few examples of desired responses or formats based on the retrieved documents, enabling it to generalize from limited data.
+| Prompt Templates | Use predefined templates that include placeholders for retrieved information, guiding the model in generating responses based on these examples.
+| Dynamic Few-Shot Learning | Adaptively update few-shot examples based on the context and retrieved documents, allowing the model to handle diverse queries and contexts more efficiently.
+
+## Hyperparameter Optimization
+
+1. Chunk Size
+    - Description: Size of text chunks for document splitting.
+    - Impact: Affects context preservation; larger chunks retain more context but might include irrelevant details; smaller chunks might miss context.
+2. Number of Retrieved Documents
+    - Description: Number of documents retrieved for response generation.
+    - Impact: Influences the breadth of information; too few can lack context, too many can overwhelm and reduce relevance.
+3. Reranking Thresholds
+    - Description: Criteria for selecting and reranking documents based on relevance.
+    - Impact: Balances precision and recall; helps in selecting high-quality, relevant documents.
+
+## Using Bayesian Optimization for Parameter Tuning.
+
+1. Define Objective Function: Set up an objective function that measures the performance of the RAG system based on selected metrics (Ex. Relevance, Accuracy).
+2. Surrogate Model Training: Train a probabilistic model (like Gaussian Process) to estimate the objective functions behaviour based on previous evaluations.
+3. Parameter Adjustment: Iteratively adjust parameters based on the surrogate model's predictions and observed performance to optimize the hyperparameters.
+4. Exploration and Exploitation: Use acquisition functions like Expected Improvement and Upper Confidence Bound to balance exploring new parameter settings with exploiting known promising ones.
+
+
+# Scaling and Deploying RAG Systems
+
+## Efficient Indexing Strategies
+
+1. Hierarchical Indexing: Use multi-level indexes to speed up retrieval by narrowing down with a coarse index first.
+2. Approximate Nearest Neighbor (ANN) Search: Efficiently find similar vectors in high-dimensional spaces with methods like HNSW or ANNOY.
+3. Sharding: Distribute data across servers to handle large datasets and balance load.
+4. Inverted Indexes: Quickly locate documents by terms, ideal for full-text search.
+
+## Incremental Updating of Vector Stores
+
+1. Batch Updates: Periodically update vectors to reduce overhead and ensure consistency.
+2. Delta Indexing: Update only changed or new documents to cut down on computational costs.
+3. Version Control: Track versions to roll back itf needed and manage updates effictively.
+4. Consistency Checks: Verify that updated vectors are correctly indexed and reflect the latest data.
+5. Efficient Data Storage: Use fast, distributed storage solutions optimized for vector data.
+
+## Load Balancing and Caching Techniques
+
+1. Caching: Reduce backend load by caching frequent data and query results. Tools: Redis, Memcached.
+2. Load Balancing: Distribute requests across servers using techniques like Round-Robin or IP Hash. Tools: Nginx, HAProxy.
+3. CDNs: Serve static data closer to userrs to cut latency and reduce server traffic.
+4. Reverse Proxies: Manage requests, caching, load balancing, SSL termination, and security.
