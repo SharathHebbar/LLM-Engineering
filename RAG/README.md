@@ -459,4 +459,4 @@ Advantages: High Accuracy and fast searches especially in high-dimensional space
 
 1. Precision
     - Definition: Precision measures the proportion of relevant documents retrieved out of all the retrieved documents.
-    - Formula: ![Precision Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BPrecision%7D%20%3D%20%5Cfrac%7B%5Ctext%7BTrue%20Positives%7D%7D%7B%5Ctext%7BTrue%20Positives%7D%20+%20%5Ctext%7BFalse%20Positives%7D%7D)
+    - Formula: &nbsp; &nbsp; &nbsp; &nbsp; ![Precision Formula](https://latex.codecogs.com/png.latex?%5Ctext%7BPrecision%7D%20%3D%20%5Cfrac%7B%5Ctext%7BTrue%20Positives%7D%7D%7B%5Ctext%7BTrue%20Positives%7D%20+%20%5Ctext%7BFalse%20Positives%7D%7D)
