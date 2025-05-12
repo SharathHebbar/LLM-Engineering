@@ -1,1 +1,5 @@
 crewai
+openai
+pandas
+duckdb
+pydantic
