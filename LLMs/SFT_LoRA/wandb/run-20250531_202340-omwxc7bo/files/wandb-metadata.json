@@ -1,0 +1,38 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.12.6",
+  "startedAt": "2025-05-31T14:53:40.628217Z",
+  "program": "c:\\sharath\\Github\\Projects\\Loan prediction\\loan-pred\\SFT\\main.ipynb",
+  "codePath": "..\\..\\..\\..\\..\\..\\sharath\\Github\\Projects\\Loan prediction\\loan-pred\\SFT\\main.ipynb",
+  "email": "sharathhebbar24@gmail.com",
+  "root": "c:\\sharath\\Github\\Projects\\Loan prediction\\loan-pred\\SFT",
+  "host": "Hebbar",
+  "executable": "c:\\sharath\\Github\\Projects\\Loan prediction\\loan-pred\\.venv\\Scripts\\python.exe",
+  "codePathLocal": "main.ipynb",
+  "cpu_count": 12,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "510745636864",
+      "used": "475747516416"
+    }
+  },
+  "memory": {
+    "total": "16869548032"
+  },
+  "cpu": {
+    "count": 12,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+      "memoryTotal": "4294967296",
+      "cudaCores": 2048,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.3"
+}
