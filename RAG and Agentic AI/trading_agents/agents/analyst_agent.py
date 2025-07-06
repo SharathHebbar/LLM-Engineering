@@ -2,26 +2,11 @@ import os
 from crewai import Agent, LLM
 # from litellm import LiteLlm
 from dotenv import load_dotenv
+from helper.llm_init import llm
 from tools.stock_research_tool import get_stock_price
 
 load_dotenv()
 
-# llm = LLM(
-#     base_url="http://localhost:1234/v1",
-#     model="lm_studio/qwen3-0.6b",
-#     api_key="lm-studio"
-# ) 
-
-
-# llm = LLM(
-#     model="groq/llama-3.3-70b-versatile",
-#     temperature=0
-# )
-
-llm = LLM(
-    model="gemini/gemini-2.0-flash",
-    temperature=0
-)
 
 analyst_agent = Agent(
     role="Financial  Market Analyst",
