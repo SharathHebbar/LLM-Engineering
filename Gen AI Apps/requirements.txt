@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-huggingface
+langchain-core
+langgraph
+fastapi
+uvicorn
+python-dotenv
+duckduckgo-search
+openai

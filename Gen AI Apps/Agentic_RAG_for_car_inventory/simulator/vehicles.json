@@ -1,0 +1,42 @@
+[
+  {
+    "id": "CDE001",
+    "make": "Cadillac",
+    "model": "Escalade IQ",
+    "year": 2025,
+    "trim": "AWD Luxury 1",
+    "price": "115495$",
+    "msrp": "120000$",
+    "discount": "4505$",
+    "mileage": 0,
+    "condition": "new",
+    "fuel_type": "Electric",
+    "transmission": "Automatic",
+    "body_style": "SUV",
+    "dealer": "Fremont Cadillac",
+    "location": "Fremont, CA",
+    "vin": "1GYS4RKT0RR123456",
+    "stock_number": "FREM001",
+    "image_url": "https://example.com/images/escalade.jpg"
+  },
+  {
+    "id": "ACE002",
+    "make": "Acura",
+    "model": "Integra",
+    "year": 2025,
+    "trim": "A-Spec Tech Package",
+    "price": "36995$",
+    "msrp": "38995$",
+    "discount": "2000$",
+    "mileage": 10,
+    "condition": "new",
+    "fuel_type": "Gasoline",
+    "transmission": "CVT",
+    "body_style": "Sedan",
+    "dealer": "Concord Acura",
+    "location": "Concord, CA",
+    "vin": "19UDE4H63SA018560",
+    "stock_number": "CONC002",
+    "image_url": "https://example.com/images/integra.jpg"
+  }
+]

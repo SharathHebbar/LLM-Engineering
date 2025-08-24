@@ -1,0 +1,651 @@
+{
+  "request_id": "ae73cfe8-22cb-4f79-89f3-e4cb5088bbeb",
+  "status": "completed",
+  "website_url": "https://www.californiacaronline.com/searchnew.aspx",
+  "user_prompt": "Extract full all the data",
+  "result": {
+    "data": {
+      "vehicles": [
+        {
+          "make": "GMC",
+          "model": "Sierra EV Max Range Denali",
+          "year": 2025,
+          "vin": "1GT40LEL5SU412822",
+          "stock": "32931",
+          "price": {
+            "msrp": 101285,
+            "sale": "See dealer for Sale Price"
+          },
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Remote Start",
+            "4WD/AWD",
+            "Cooled Seats",
+            "Wi-Fi Hotspot"
+          ]
+        },
+        {
+          "make": "Cadillac",
+          "model": "XT5 Luxury",
+          "year": 2025,
+          "vin": "1GYKNAR4XSZ150146",
+          "model_number": "6NF26",
+          "features": [
+            "Remote Start",
+            "Android Auto",
+            "Apple CarPlay"
+          ]
+        },
+        {
+          "make": "Cadillac",
+          "model": "CT4 Sport",
+          "year": 2026,
+          "vin": "1G6DC5RK8T0102468",
+          "msrp": 46215,
+          "features": [
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "Android Auto",
+            "Apple CarPlay",
+            "Cooled Seats"
+          ],
+          "offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Purchase Allowance",
+              "amount": -500
+            },
+            {
+              "name": "Finance Cash",
+              "amount": -1000
+            },
+            {
+              "name": "GM Educator Offer",
+              "amount": -500
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Yukon XL Denali",
+          "year": 2025,
+          "vin": "1GKS2JRL4SR228950",
+          "msrp": 97470,
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            }
+          ]
+        },
+        {
+          "make": "Buick",
+          "model": "Encore GX Sport Touring",
+          "year": 2026,
+          "vin": "KL4AMDSL0TB012479",
+          "msrp": 30880,
+          "features": [
+            "Bluetooth",
+            "Remote Start",
+            "Android Auto",
+            "Apple CarPlay",
+            "Keyless Entry",
+            "Wi-Fi Hotspot"
+          ],
+          "offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Purchase Allowance for Current Eligible Non-GM Owners and Lessees",
+              "amount": -2000
+            }
+          ]
+        },
+        {
+          "make": "Buick",
+          "model": "Encore GX Sport Touring",
+          "year": 2026,
+          "vin": "KL4AMDSLXTB012134",
+          "msrp": 30385,
+          "features": [
+            "Bluetooth",
+            "Remote Start",
+            "Android Auto",
+            "Apple CarPlay",
+            "Keyless Entry",
+            "Wi-Fi Hotspot"
+          ],
+          "offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Purchase Allowance for Current Eligible Non-GM Owners and Lessees",
+              "amount": -2000
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Sierra EV Elevation Standard Range",
+          "year": 2026,
+          "vin": "1GT1ESEH2TU401966",
+          "stock": "33070",
+          "features": [
+            "Adaptive Cruise Control",
+            "Remote Start",
+            "4WD/AWD",
+            "Wi-Fi Hotspot",
+            "Auto Dimming Mirror",
+            "Lane Departure Warning"
+          ],
+          "msrp": 64995,
+          "sale_price": "See dealer for Sale Price",
+          "rebates": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Potential Federal EV Tax Credit",
+              "amount": -7500
+            },
+            {
+              "name": "Costco Executive Member Incentive",
+              "amount": -1250
+            },
+            {
+              "name": "Costco Gold Star and Business Member Incentive",
+              "amount": -1000
+            },
+            {
+              "name": "Purchase Allowance for Current Eligible Non-GM Owners and Lessees",
+              "amount": -250
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Yukon Denali",
+          "year": 2025,
+          "vin": "1GKS2DRL4SR355442",
+          "stock": "33120",
+          "features": [
+            "Adaptive Cruise Control",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto",
+            "Apple CarPlay",
+            "Cooled Seats"
+          ],
+          "msrp": 87465,
+          "sale_price": "See dealer for Sale Price",
+          "rebates": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Yukon Denali Ultimate",
+          "year": 2025,
+          "vin": "1GKS2ERL2SR352822",
+          "stock": "33110",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 106840,
+          "sale_price": "See dealer for Sale Price",
+          "rebates": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Yukon XL Denali",
+          "year": 2025,
+          "vin": "1GKS2JRL4SR353530",
+          "stock": "33113",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 99075,
+          "sale_price": "See dealer for Sale Price",
+          "rebates": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Yukon XL Denali",
+          "year": 2025,
+          "vin": "1GKS2JRL7SR353960",
+          "stock": "33122",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 98675,
+          "sale_price": "See dealer for Sale Price",
+          "additional_offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Sierra EV Elevation Extended Range",
+          "year": 2026,
+          "vin": "1GT1ETED9TU402454",
+          "stock": "33114",
+          "features": [
+            "Adaptive Cruise Control",
+            "Remote Start",
+            "4WD/AWD",
+            "Cooled Seats",
+            "Wi-Fi Hotspot",
+            "Lane Departure Warning"
+          ],
+          "msrp": 81640,
+          "sale_price": "See dealer for Sale Price",
+          "additional_offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Potential Federal EV Tax Credit",
+              "amount": -7500
+            },
+            {
+              "name": "Costco Executive Member Incentive",
+              "amount": -1250
+            },
+            {
+              "name": "Costco Gold Star and Business Member Incentive",
+              "amount": -1000
+            },
+            {
+              "name": "Purchase Allowance for Current Eligible Non-GM Owners and Lessees",
+              "amount": -250
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Sierra EV Elevation Extended Range",
+          "year": 2026,
+          "vin": "1GT1ETED0TU402455",
+          "stock": "33123",
+          "features": [
+            "Adaptive Cruise Control",
+            "Remote Start",
+            "4WD/AWD",
+            "Cooled Seats",
+            "Wi-Fi Hotspot",
+            "Lane Departure Warning"
+          ],
+          "msrp": 81640,
+          "sale_price": "See dealer for Sale Price",
+          "additional_offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Potential Federal EV Tax Credit",
+              "amount": -7500
+            },
+            {
+              "name": "Costco Executive Member Incentive",
+              "amount": -1250
+            },
+            {
+              "name": "Costco Gold Star and Business Member Incentive",
+              "amount": -1000
+            },
+            {
+              "name": "Purchase Allowance for Current Eligible Non-GM Owners and Lessees",
+              "amount": -250
+            }
+          ]
+        },
+        {
+          "make": "GMC",
+          "model": "Terrain AT4",
+          "year": 2026,
+          "vin": "3GKALYEG5TL167594",
+          "stock": "33095",
+          "features": [
+            "Adaptive Cruise Control",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto",
+            "Apple CarPlay",
+            "Power Tailgate/Liftgate"
+          ],
+          "msrp": 40985,
+          "sale_price": "See dealer for Sale Price",
+          "additional_offers": [
+            {
+              "name": "Spartan Recovery Lync",
+              "amount": 999
+            },
+            {
+              "name": "Down Payment Assistance",
+              "amount": -750
+            }
+          ]
+        },
+        {
+          "make": "Cadillac",
+          "model": "6K10906",
+          "year": 2025,
+          "vin": "1GYS9PRL2SR365146",
+          "trim": "Escalade ESV Sport",
+          "price": {
+            "msrp": 115990,
+            "dublinPrice": "See dealer for Sale Price"
+          },
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "status": "In Transit",
+          "extColor": "Crystal White Tricoat",
+          "intColor": null
+        },
+        {
+          "make": "Cadillac",
+          "model": "6K10906",
+          "year": 2025,
+          "vin": "1GYS9PRL3SR351935",
+          "trim": "Escalade ESV Sport",
+          "price": {
+            "msrp": 116790,
+            "dublinPrice": "See dealer for Sale Price"
+          },
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "status": "In Stock",
+          "extColor": null,
+          "intColor": null
+        },
+        {
+          "make": "Cadillac",
+          "model": "6K10906",
+          "year": 2025,
+          "vin": "1GYS9PRL7SR368821",
+          "trim": "Escalade ESV Sport",
+          "price": {
+            "msrp": 118815,
+            "dublinPrice": "See dealer for Sale Price"
+          },
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "status": "In Transit",
+          "extColor": null,
+          "intColor": null
+        },
+        {
+          "make": "Cadillac",
+          "model": "6K10706",
+          "year": 2025,
+          "vin": "1GYS9FRL5SR371789",
+          "trim": "Escalade Sport",
+          "price": {
+            "msrp": 115165,
+            "dublinPrice": "See dealer for Sale Price"
+          },
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "status": "In Transit",
+          "extColor": null,
+          "intColor": null
+        },
+        {
+          "make": "Cadillac",
+          "model": "6K10906",
+          "year": 2025,
+          "vin": "1GYS9RRL2SR371332",
+          "trim": "Escalade ESV Sport Platinum",
+          "price": {
+            "msrp": null,
+            "dublinPrice": "See dealer for Sale Price"
+          },
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "status": "In Transit",
+          "extColor": null,
+          "intColor": null
+        },
+        {
+          "make": "Cadillac",
+          "model": "Escalade ESV V-Series",
+          "year": 2025,
+          "vin": "1GYS9SR99SR352014",
+          "stock": "67363",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 132345,
+          "price": "See dealer for Sale Price"
+        },
+        {
+          "make": "Cadillac",
+          "model": "Escalade ESV Sport Platinum",
+          "year": 2025,
+          "vin": "1GYS9RRL1SR374156",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 131720,
+          "price": "See dealer for Sale Price"
+        },
+        {
+          "make": "Cadillac",
+          "model": "Escalade ESV Sport Platinum",
+          "year": 2025,
+          "vin": "1GYS9RRL2SR374179",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 131720,
+          "price": "See dealer for Sale Price"
+        },
+        {
+          "make": "Cadillac",
+          "model": "Escalade ESV Sport Platinum",
+          "year": 2025,
+          "vin": "1GYS9RRL8SR358956",
+          "stock": "67373",
+          "features": [
+            "Super Cruise",
+            "Adaptive Cruise Control",
+            "Bluetooth",
+            "Remote Start",
+            "4WD/AWD",
+            "Android Auto"
+          ],
+          "msrp": 132945,
+          "price": "See dealer for Sale Price"
+        }
+      ],
+      "dealership": {
+        "name": "Dosanjh Family Auto Group",
+        "address": "4200 John Monego Court, Dublin, CA 94568"
+      },
+      "body_styles": [
+        "Cargo Van",
+        "Convertible",
+        "Coupe",
+        "Crossover",
+        "Hatchback",
+        "Minivan",
+        "Sedan",
+        "SUV",
+        "Truck",
+        "Truck - Crew Cab",
+        "Truck - Extended Cab",
+        "Truck - Regular Cab",
+        "Van"
+      ]
+    },
+    "extracted_data": {
+      "last_name": "",
+      "email_address": "",
+      "phone_number": "",
+      "preferred_date_and_time": "",
+      "links": [
+        "https://www.californiacaronline.com/new-Dublin-2026-GMC-Sierra+EV-Elevation+Standard+Range-1GT1ESEH2TU401966",
+        "https://accessibe.com/blog/knowledgebase/screen-reader-guide",
+        "https://www.californiacaronline.com/new-Dublin-2025-GMC-Yukon+XL-Denali-1GKS2JRL4SR228950",
+        "https://www.californiacaronline.com/service-locations.html",
+        "https://www.californiacaronline.com/searchused.aspx?BodyType=Sedan,Convertible,Coupe",
+        "https://www.californiacaronline.com/buy-online",
+        "https://www.californiacaronline.com/ccpa-requests",
+        "https://maps.google.com/maps?saddr=Current%2BLocation&daddr=4200%20John%20Monego%20Court%20%2C%2BDublin%2C%2BCA%2B94568",
+        "https://www.californiacaronline.com/new-Dublin-2026-GMC-Terrain-AT4-3GKALYEG5TL167594",
+        "https://www.californiacaronline.com/new-Dublin-2025-GMC-Yukon+XL-Denali-1GKS2JRL4SR353530",
+        "https://www.californiacaronline.com/searchused.aspx?BodyType=Truck%20-%20Regular%20Cab,Truck%20-%20Crew%20Cab,Truck%20-%20Extended%20Cab",
+        "https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=A60D04FCA1D5E0912A23F4E276D53325",
+        "https://www.californiacaronline.com/searchused.aspx?pricerange=0-20000",
+        "https://www.californiacaronline.com/finance-locations.html",
+        "https://www.californiacaronline.com/locations.html",
+        "https://www.californiacaronline.com/certified-pre-owned.html",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-V+Series-1GYS9SR99SR352014",
+        "https://www.californiacaronline.com/searchused.aspx",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport-1GYS9PRL7SR368821",
+        "https://www.californiacaronline.com/new-Dublin-2025-GMC-Sierra+EV-Max+Range+Denali-1GT40LEL5SU412822",
+        "https://www.californiacaronline.com/",
+        "https://www.californiacaronline.com/new-Dublin-2026-GMC-Sierra+EV-Elevation+Extended+Range-1GT1ETED0TU402455",
+        "https://www.californiacaronline.com/privacy",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport-1GYS9PRL2SR365146",
+        "https://www.californiacaronline.com/new-Dublin-2025-GMC-Yukon+XL-Denali-1GKS2JRL7SR353960",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade-Sport-1GYS9FRL5SR371789",
+        "https://www.californiacaronline.com/privacy.aspx",
+        "https://www.californiacaronline.com/new-Dublin-2026-Cadillac-CT4-Sport-1G6DC5RK8T0102468",
+        "https://www.dealeron.com/do-info/?utm_source=dealersite&utm_medium=referral&utm_campaign=Client_Sites",
+        "https://www.californiacaronline.com/new-Dublin-2025-GMC-Yukon-Denali+Ultimate-1GKS2ERL2SR352822",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport+Platinum-1GYS9RRL2SR371332",
+        "https://www.californiacaronline.com/new-Dublin-2026-Buick-Encore+GX-Sport+Touring-KL4AMDSLXTB012134",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport+Platinum-1GYS9RRL8SR358956",
+        "https://www.californiacaronline.com/searchused.aspx?BodyType=SUV",
+        "https://www.californiacaronline.com/new-Dublin-2025-GMC-Yukon-Denali-1GKS2DRL4SR355442",
+        "https://complyauto.com",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-XT5-Luxury-1GYKNAR4XSZ150146",
+        "https://www.californiacaronline.com/new-Dublin-2026-GMC-Sierra+EV-Elevation+Extended+Range-1GT1ETED9TU402454",
+        "https://www.californiacaronline.com/new-Dublin-2026-Buick-Encore+GX-Sport+Touring-KL4AMDSL0TB012479",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport-1GYS9PRL3SR351935",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport-1GYS9NRL2SR345841",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport+Platinum-1GYS9RRL1SR374156",
+        "https://www.californiacaronline.com/new-Dublin-2025-Cadillac-Escalade+ESV-Sport+Platinum-1GYS9RRL2SR374179",
+        "https://www.californiacaronline.com/sitemap.aspx"
+      ]
+    },
+    "cookies": {
+      "essential_cookies": "necessary website features, accessibility, and cookie preferences",
+      "functional_cookies": "error reporting and to remember settings and deliver optional functionality",
+      "analytics_cookies": "measuring website statistics and user interactions",
+      "targeting_cookies": "cross-site retargeted advertising"
+    },
+    "language": [
+      "English",
+      "Spanish / Español",
+      "English / United Kingdom",
+      "Korean / ",
+      "Vietnamese / Tiếng Việt Nam",
+      "Tagalog / Filipino",
+      "Chinese / ",
+      "German / Deutsch",
+      "French / Français"
+    ],
+    "address": "4200 John Monego Court, Dublin, CA 94568",
+    "phone": "",
+    "email": ""
+  },
+  "error": ""
+}

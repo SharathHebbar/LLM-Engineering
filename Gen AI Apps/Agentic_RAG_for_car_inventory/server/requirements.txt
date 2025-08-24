@@ -1,0 +1,14 @@
+streamlit
+langchain
+langgraph
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-huggingface
+langchain-openai
+tiktoken
+faiss-cpu
+typing-extensions
+transformers
+google-generativeai
+openai

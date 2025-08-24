@@ -1,0 +1,8 @@
+*.drawio
+.env
+DuckDuckGo_WebSearch/
+*.env
+main.ipynb
+__pycache__/
+venv/
+agentic/
