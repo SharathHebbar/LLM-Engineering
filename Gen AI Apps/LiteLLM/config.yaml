@@ -1,0 +1,75 @@
+model_list:
+  - model_name: gpt-oss-120b
+    litellm_params:
+      model: groq/gpt-oss-120b
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 0.15
+      cost_per_out_token: 0.60
+      context_window: 131072
+      max_completion_token: 65536
+
+  - model_name: gpt-oss-20b
+    litellm_params:
+      model: groq/gpt-oss-20b
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 0.075
+      cost_per_out_token: 0.30
+      context_window: 131072
+      max_completion_token: 65536
+  
+  - model_name: llama-3.1-8b-instant
+    litellm_params:
+      model: groq/llama-3.1-8b-instant
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 0.05
+      cost_per_out_token: 0.08
+      context_window: 131072
+      max_completion_token: 131072
+
+  - model_name: llama-3.3-70b-versatile
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 0.59
+      cost_per_out_token: 0.79
+      context_window: 131072
+      max_completion_token: 32768
+
+  - model_name: qwen3-32b
+    litellm_params:
+      model: groq/qwen3-32b
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 0.29
+      cost_per_out_token: 0.59
+      context_window: 131072
+      max_completion_token: 40960
+
+  - model_name: kimi-k2-instruct-0905
+    litellm_params:
+      model: groq/kimi-k2-instruct-0905
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 1
+      cost_per_out_token: 3
+      context_window: 262144
+      max_completion_token: 16384
+
+  - model_name: llama-4-scout-17b-16e-instruct
+    litellm_params:
+      model: groq/llama-4-scout-17b-16e-instruct
+      api_key: os.environ/GROQ_API_KEY
+    model_info:
+      cost_per_inp_token: 0.11
+      cost_per_out_token: 0.34
+      context_window: 131072
+      max_completion_token: 8192
+
+router_settings:
+  routing_strategy: fallback
+
+  
