@@ -1,0 +1,31 @@
+model_list:
+  - model_name: claude-4-sonnet
+    litellm_params:
+      model: nvidia_nim/minimaxai/minimax-m2.7
+      api_base: https://integrate.api.nvidia.com/v1
+      api_key: nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+  - model_name: claude-4-opus
+    litellm_params:
+      model: nvidia_nim/stepfun-ai/step-3.5-flash
+      api_base: https://integrate.api.nvidia.com/v1
+      api_key: nvapi-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+  - model_name: claude-cohere-command-a
+    litellm_params:
+      model: cohere/command-a
+      api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+  - model_name: claude-google-gemini-3-flash-preview
+    litellm_params:
+      model: gemini/gemini-3-flash-preview
+      api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  
+  - model_name: claude-groq-gpt-oss-120b
+    litellm_params:
+      model: groq/gpt-oss-120b
+      api_base: https://api.groq.com/openai/v1
+      api_key: gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+litellm_settings:
+  drop_params: true

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Project card hover effect */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Skill bar animation */
+        .skill-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <a href="#" class="text-2xl font-bold gradient-text">JD</a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-primary transition">About</a>
+                    <a href="#skills" class="hover:text-primary transition">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition">Projects</a>
+                    <a href="#experience" class="hover:text-primary transition">Experience</a>
+                    <a href="#contact" class="hover:text-primary transition">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="#about" class="hover:text-primary transition">About</a>
+                    <a href="#skills" class="hover:text-primary transition">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition">Projects</a>
+                    <a href="#experience" class="hover:text-primary transition">Experience</a>
+                    <a href="#contact" class="hover:text-primary transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <p class="text-primary font-medium mb-4">Hi, I'm</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="gradient-text">John Doe</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-400 mb-8">
+                    Full Stack Developer & UI/UX Designer
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-12">
+                    I craft beautiful, performant web applications that solve real problems.
+                    Passionate about clean code, intuitive design, and continuous learning.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="px-8 py-4 bg-primary hover:bg-secondary rounded-full font-semibold transition transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border border-gray-700 hover:border-primary rounded-full font-semibold transition">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">About Me</h2>
+                    <p class="text-gray-400 mb-4">
+                        I'm a passionate developer with 5+ years of experience building web applications.
+                        My journey began with a curiosity about how things work on the web, and it has evolved
+                        into a career focused on creating impactful digital experiences.
+                    </p>
+                    <p class="text-gray-400 mb-4">
+                        I specialize in JavaScript ecosystems (React, Node.js) but enjoy exploring new
+                        technologies and frameworks. When I'm not coding, you'll find me contributing to
+                        open source projects or experimenting with new design patterns.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-6">
+                        <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Problem Solver</span>
+                        <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Team Player</span>
+                        <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Quick Learner</span>
+                        <span class="px-4 py-2 bg-gray-800 rounded-full text-sm">Attention to Detail</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-800/50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+                        <div class="text-gray-400">Projects Completed</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold gradient-text mb-2">5+</div>
+                        <div class="text-gray-400">Years Experience</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold gradient-text mb-2">30+</div>
+                        <div class="text-gray-400">Happy Clients</div>
+                    </div>
+                    <div class="bg-gray-800/50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold gradient-text mb-2">100%</div>
+                        <div class="text-gray-400">Dedication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Skills & Technologies</h2>
+                <p class="text-gray-400">Technologies I work with</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-gray-800/30 p-6 rounded-2xl fade-in">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Frontend</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>React / Next.js</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-primary rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>TypeScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-secondary rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Tailwind CSS</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-accent rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Vue.js</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-primary rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-gray-800/30 p-6 rounded-2xl fade-in">
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Backend</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Node.js / Express</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-secondary rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Python / Django</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>PostgreSQL</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-accent rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>REST APIs / GraphQL</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="h-2 bg-gray-700 rounded-full skill-bar">
+                                <div class="h-full bg-secondary rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Other -->
+                <div class="bg-gray-800/30 p-6 rounded-2xl fade-in">
+                    <h3 class="text-xl font-bold mb-4 text-accent">Tools & DevOps</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Git</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Docker</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">AWS</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">CI/CD</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Figma</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">VS Code</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Webpack</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Vite</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Linux</span>
+                        <span class="px-4 py-2 bg-gray-700 rounded-lg">Agile/Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-gray-400">Some of my recent work</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-800/50 rounded-2xl overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-400 mb-4">
+                            A full-featured online store with cart, checkout, and payment integration.
+                            Built with React, Node.js, and Stripe.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">React</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">Node.js</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">MongoDB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary hover:text-secondary transition">Live Demo →</a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-800/50 rounded-2xl overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-accent"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-400 mb-4">
+                            Collaborative project management tool with real-time updates,
+                            drag-and-drop boards, and team analytics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">Vue.js</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">Firebase</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">WebSockets</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary hover:text-secondary transition">Live Demo →</a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-800/50 rounded-2xl overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-accent to-primary"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AI Content Generator</h3>
+                        <p class="text-gray-400 mb-4">
+                            SaaS application that uses AI to generate marketing copy,
+                            blog posts, and social media content.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">Next.js</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">OpenAI</span>
+                            <span class="px-3 py-1 bg-gray-700 text-xs rounded">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-primary hover:text-secondary transition">Live Demo →</a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Work Experience</h2>
+                <p class="text-gray-400">My professional journey</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="relative pl-8 border-l-2 border-primary fade-in">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full"></div>
+                    <div class="bg-gray-800/50 p-6 rounded-r-2xl">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Senior Full Stack Developer</h3>
+                            <span class="text-primary text-sm">2022 - Present</span>
+                        </div>
+                        <p class="text-gray-400 mb-2">Tech Innovations Inc.</p>
+                        <p class="text-gray-300">
+                            Lead development of microservices architecture, mentor junior developers,
+                            and architect scalable solutions for enterprise clients.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="relative pl-8 border-l-2 border-secondary fade-in">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-secondary rounded-full"></div>
+                    <div class="bg-gray-800/50 p-6 rounded-r-2xl">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                            <span class="text-secondary text-sm">2020 - 2022</span>
+                        </div>
+                        <p class="text-gray-400 mb-2">Digital Solutions LLC</p>
+                        <p class="text-gray-300">
+                            Developed and maintained multiple client projects using React and Node.js.
+                            Implemented CI/CD pipelines and best practices.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="relative pl-8 border-l-2 border-accent fade-in">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-accent rounded-full"></div>
+                    <div class="bg-gray-800/50 p-6 rounded-r-2xl">
+                        <div class="flex flex-wrap justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Junior Developer</h3>
+                            <span class="text-accent text-sm">2019 - 2020</span>
+                        </div>
+                        <p class="text-gray-400 mb-2">StartUp Hub</p>
+                        <p class="text-gray-300">
+                            Started my professional journey building web applications and learning
+                            agile methodologies. Contributed to 10+ client projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-400">Let's work together on your next project</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12 fade-in">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Email</p>
+                                    <p class="text-white">hello@johndoe.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Phone</p>
+                                    <p class="text-white">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Location</p>
+                                    <p class="text-white">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Social Links</h3>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-800/50 p-6 rounded-2xl fade-in">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary transition" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary transition" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary transition resize-none" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-primary hover:bg-secondary rounded-lg font-semibold transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2024 John Doe. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate skill bars when in view
+        const skillBars = document.querySelectorAll('.skill-bar > div');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.style.width === '') {
+                    const width = entry.target.style.width || entry.target.getAttribute('style').match(/width:\s*(\d+%)/)[1];
+                    entry.target.style.width = width;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            bar.style.width = '0%';
+            skillObserver.observe(bar);
+        });
+    </script>
+</body>
+</html>
