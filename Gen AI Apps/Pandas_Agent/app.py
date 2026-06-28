@@ -7,17 +7,6 @@ from pandas_agent import PandasAgent
 st.title("Pandas Agent")
 
 
-
-
-# data = st.chat_input(
-#     placeholder="Upload your CSV file here and ask questions about it!",
-#     accept_file=True,
-#     file_type=["csv", "xlsx"]
-# )
-
-# st.write(data)
-
-
 data = pd.read_excel("dataset/P_Data_Extract_From_World_Development_Indicators.xlsx", sheet_name="Data")
 metadata = pd.read_excel("dataset/P_Data_Extract_From_World_Development_Indicators.xlsx", sheet_name="Series - Metadata")
 

@@ -6,3 +6,5 @@ main.ipynb
 __pycache__/
 venv/
 agentic/
+
+.env
